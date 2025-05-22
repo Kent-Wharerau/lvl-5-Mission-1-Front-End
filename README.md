@@ -1,12 +1,35 @@
-# React + Vite
+# Car Type Identifier Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple React frontend that allows users to upload an image of a vehicle. The image is sent to a backend API, which returns a predicted vehicle type using Azure Custom Vision.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Uploads an image using a form
+- Displays prediction results from a backend API
+- Shows loading and error states
+- Clean layout with CSS modules
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Install dependencies
+
+npm install
+
+### 2. Run the development server
+
+npm run dev
+
+The app will be available at:
+
+```
+http://localhost:5173
+```
+
+> Note: Ensure your backend is running at `http://localhost:5000`
+
+## How It Works
+
+- Users select an image file via an upload form.
+- The image is sent as a `POST` request to `http://localhost:5000/predict`.
+- The response is parsed, and the top predicted vehicle type is displayed.
+- If there's an error, a message is shown to the user.
